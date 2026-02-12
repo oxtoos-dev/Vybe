@@ -2,75 +2,100 @@ export default function Home() {
   return (
     <main style={{
       minHeight: "100vh",
-      background: "linear-gradient(135deg,#ff0080,#7928ca)",
+      background: "linear-gradient(135deg,#ff006e,#3a0ca3)",
       color: "white",
-      fontFamily: "Arial, sans-serif",
+      fontFamily: "Helvetica, sans-serif",
       padding: "40px"
     }}>
 
-      {/* HERO SECTION */}
-      <section style={{ textAlign: "center", marginBottom: "80px" }}>
-        <h1 style={{ fontSize: "60px", marginBottom: "20px" }}>
-          VYBE
+      {/* NAVBAR */}
+      <nav style={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: "80px"
+      }}>
+        <h2 style={{ letterSpacing: "3px" }}>VYBE</h2>
+        <div style={{ display: "flex", gap: "20px", fontSize: "14px" }}>
+          <span>Talent</span>
+          <span>Apply</span>
+          <span>Brands</span>
+        </div>
+      </nav>
+
+      {/* HERO */}
+      <section style={{ marginBottom: "100px" }}>
+        <h1 style={{
+          fontSize: "70px",
+          lineHeight: "1.1",
+          maxWidth: "800px"
+        }}>
+          Where Brands Meet
+          <br />
+          Next-Gen Talent.
         </h1>
-        <p style={{ fontSize: "22px", maxWidth: "700px", margin: "0 auto" }}>
+
+        <p style={{
+          marginTop: "20px",
+          fontSize: "20px",
+          maxWidth: "600px",
+          opacity: 0.9
+        }}>
           Pune’s modern casting & modeling collaboration agency.
-          Connecting brands with the right talent.
+          Built for the social media era.
         </p>
       </section>
 
-      {/* MODEL PORTFOLIO GRID */}
-      <section style={{ marginBottom: "80px" }}>
-        <h2 style={{ fontSize: "32px", marginBottom: "30px" }}>
-          Featured Talent
-        </h2>
+      {/* PORTFOLIO */}
+      <section style={{ marginBottom: "100px" }}>
+        <h2 style={{ marginBottom: "30px" }}>Featured Talent</h2>
 
         <div style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))",
           gap: "20px"
         }}>
           {[1,2,3,4,5,6].map((item) => (
             <div key={item} style={{
-              background: "white",
-              height: "250px",
-              borderRadius: "15px"
+              height: "280px",
+              borderRadius: "20px",
+              background: "rgba(255,255,255,0.2)",
+              backdropFilter: "blur(10px)"
             }} />
           ))}
         </div>
       </section>
 
-      {/* MODEL APPLICATION FORM */}
-      <section style={{ marginBottom: "80px" }}>
-        <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>
-          Apply as a Model
-        </h2>
+      {/* APPLY SECTION */}
+      <section style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fit,minmax(300px,1fr))",
+        gap: "60px"
+      }}>
 
-        <form style={{ display: "grid", gap: "15px", maxWidth: "500px" }}>
-          <input placeholder="Full Name" style={inputStyle}/>
-          <input placeholder="Instagram Handle" style={inputStyle}/>
-          <input placeholder="City" style={inputStyle}/>
-          <input type="email" placeholder="Email" style={inputStyle}/>
-          <button style={buttonStyle}>Submit Application</button>
-        </form>
-      </section>
+        <div>
+          <h2>Apply as Talent</h2>
+          <form style={{ display: "grid", gap: "15px", marginTop: "20px" }}>
+            <input placeholder="Full Name" style={inputStyle}/>
+            <input placeholder="Instagram" style={inputStyle}/>
+            <input placeholder="City" style={inputStyle}/>
+            <input type="email" placeholder="Email" style={inputStyle}/>
+            <button style={buttonStyle}>Apply Now</button>
+          </form>
+        </div>
 
-      {/* BRAND CASTING FORM */}
-      <section>
-        <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>
-          Submit Casting Requirement
-        </h2>
+        <div>
+          <h2>Submit Casting Brief</h2>
+          <form style={{ display: "grid", gap: "15px", marginTop: "20px" }}>
+            <input placeholder="Brand Name" style={inputStyle}/>
+            <input placeholder="Campaign Type" style={inputStyle}/>
+            <input placeholder="Budget Range" style={inputStyle}/>
+            <textarea placeholder="Talent Requirements"
+              style={{...inputStyle, height: "100px"}} />
+            <button style={buttonStyle}>Submit Brief</button>
+          </form>
+        </div>
 
-        <form style={{ display: "grid", gap: "15px", maxWidth: "500px" }}>
-          <input placeholder="Brand Name" style={inputStyle}/>
-          <input placeholder="Campaign Type" style={inputStyle}/>
-          <input placeholder="Budget Range" style={inputStyle}/>
-          <textarea placeholder="Talent Requirements" style={{
-            ...inputStyle,
-            height: "100px"
-          }} />
-          <button style={buttonStyle}>Submit Request</button>
-        </form>
       </section>
 
     </main>
@@ -78,15 +103,15 @@ export default function Home() {
 }
 
 const inputStyle = {
-  padding: "12px",
-  borderRadius: "8px",
+  padding: "14px",
+  borderRadius: "12px",
   border: "none",
   fontSize: "14px"
 };
 
 const buttonStyle = {
-  padding: "12px",
-  borderRadius: "8px",
+  padding: "14px",
+  borderRadius: "12px",
   border: "none",
   background: "black",
   color: "white",
